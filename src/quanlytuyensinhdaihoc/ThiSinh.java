@@ -1,5 +1,7 @@
 package quanlytuyensinhdaihoc;
 
+import static org.hamcrest.CoreMatchers.both;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -197,4 +199,18 @@ public class ThiSinh {
 		this.danhSachNguyenVong.forEach(item -> System.out.println(item.toString()));
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if(o == this) {
+			return true;
+		}
+		ThiSinh soSanh = (ThiSinh) o;
+		boolean result = soSanh.getDiemUuTien() == this.diemUuTien
+						&& soSanh.getGioTinh().equals(this.getGioTinh())
+						&& soSanh.getHoTen().equals(this.hoTen)
+						&& soSanh.getNamSinh() == this.namSinh
+						&& soSanh.getQueQuan().equals(this.queQuan)
+						&& soSanh.getSoBaoDanh().equals(this.soBaoDanh);
+		return result;
+	}
 }

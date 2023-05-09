@@ -65,4 +65,20 @@ public class NguyenVong {
 		return "NguyenVong [maNganh: " + maNganh + ", tenNganh: " + tenNganh + ", maTruong: " + maTruong
 				+ ", khoiSetTuyen: " + khoiSetTuyen + ", diemThi: " + diemXetTuyen + "]";
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(o == this) {
+			return true;
+		}
+		NguyenVong soSanh = (NguyenVong) o;
+		boolean result = soSanh.getKhoiSetTuyen() == this.khoiSetTuyen
+						&& soSanh.getMaNganh() == this.maNganh
+						&& soSanh.getMaTruong() == this.maTruong
+						&& soSanh.getTenNganh() == this.tenNganh;
+		
+		
+		return result;
+		
+	}
 }

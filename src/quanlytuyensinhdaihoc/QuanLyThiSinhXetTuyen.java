@@ -104,4 +104,23 @@ public class QuanLyThiSinhXetTuyen {
 			thiSinh.printThiSinh();
 		}
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(o == this) {
+			return true;
+		}
+		
+		QuanLyThiSinhXetTuyen soSanh = (QuanLyThiSinhXetTuyen) o;
+		boolean result = true;
+		int index = 0;
+		for (ThiSinh thiSinh : soSanh.getDanhSachThiSinh()) {
+			if(!thiSinh.equals(this.danhSachThiSinh.get(index))) {
+				result = false;
+			}
+			index++;
+		}
+		
+		return result;
+	}
 }
