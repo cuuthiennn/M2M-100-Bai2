@@ -145,7 +145,7 @@ public class ThiSinh {
 	}
 
 	public void swapNguyenVong(int sttNguyenVongSoMot, int sttNguyenVongSoHai) {
-		if (danhSachNguyenVong.size() < sttNguyenVongSoHai || danhSachNguyenVong.size() < sttNguyenVongSoMot) {
+		if (danhSachNguyenVong.size() > sttNguyenVongSoHai || danhSachNguyenVong.size() > sttNguyenVongSoMot) {
 			NguyenVong tempNguyenVong = danhSachNguyenVong.get(sttNguyenVongSoMot);
 			
 			danhSachNguyenVong.set(sttNguyenVongSoMot, danhSachNguyenVong.get(sttNguyenVongSoHai));

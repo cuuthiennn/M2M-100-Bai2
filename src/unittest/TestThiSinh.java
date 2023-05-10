@@ -1,5 +1,7 @@
 package unittest;
 
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import exception.ElementNotExistException;
 import quanlytuyensinhdaihoc.DiemThi;
 import quanlytuyensinhdaihoc.NguyenVong;
 import quanlytuyensinhdaihoc.ThiSinh;
@@ -91,4 +94,28 @@ public class TestThiSinh {
 		
 		assertEquals(expected, actual);
 	}
+	
+	@Test
+	void testExceptionSwapNguyenVong() throws Exception{
+		try {
+			thiSinh.swapNguyenVong(2, 3);
+			fail("Not throw an exception");
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertTrue(e instanceof ElementNotExistException);
+		}
+	}
+	
+	@Test
+	void testSwapNguyenVong() {
+		NguyenVong expected = new NguyenVong("MN4", "CNTT", "CN4", "D", 0f);
+		thiSinh.addNguyenVongChoThiSinh(expected);
+		
+		thiSinh.swapNguyenVong(0, 1);
+		
+		NguyenVong actual = thiSinh.getDanhSachNguyenVong().get(0);
+		
+		assertEquals(expected, actual);
+	}
+	
 }
