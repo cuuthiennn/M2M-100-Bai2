@@ -102,7 +102,7 @@ public class TestThiSinh {
 			fail("Not throw an exception");
 		} catch (Exception e) {
 			// TODO: handle exception
-			assertTrue(e instanceof ElementNotExistException);
+			assertTrue(e instanceof ArrayIndexOutOfBoundsException);
 		}
 	}
 	

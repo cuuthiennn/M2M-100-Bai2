@@ -1,7 +1,5 @@
 package quanlytuyensinhdaihoc;
 
-import static org.hamcrest.CoreMatchers.both;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -152,7 +150,7 @@ public class ThiSinh {
 			danhSachNguyenVong.set(sttNguyenVongSoHai, tempNguyenVong);
 			return;
 		}
-		throw new ElementNotExistException("Nguyen vong khong ton tai!!");
+		throw new ArrayIndexOutOfBoundsException("Nguyen vong khong ton tai!!");
 	}
 
 	public int getSoThuTuNguyenVong(String maNganh) {
