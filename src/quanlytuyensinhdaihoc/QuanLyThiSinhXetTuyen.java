@@ -123,4 +123,14 @@ public class QuanLyThiSinhXetTuyen {
 		
 		return result;
 	}
+	
+	public ThiSinh getThiSinhBySoBaoDanh(long soBaoDanh) {
+		for (ThiSinh thiSinh : danhSachThiSinh) {
+			if(thiSinh.getSoBaoDanh().equals(soBaoDanh)) {
+				return thiSinh;
+			}
+		}
+		
+		throw new ElementNotExistException("Thi sinh khong ton tai!!");
+	}
 }

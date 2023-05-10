@@ -174,6 +174,18 @@ public class ThiSinh {
 		}
 		throw new ElementNotExistException("Nguyen vong khong ton tai!!");
 	}
+	
+	public NguyenVong getNguyenVong(String maNganh, String maTruong) {
+		NguyenVong result;
+		for (NguyenVong nguyenVong : danhSachNguyenVong) {
+			if (nguyenVong.getMaNganh().equals(maNganh) 
+					&& nguyenVong.getMaTruong().equals(maTruong)) {
+				result = nguyenVong;
+				return result;
+			}
+		}
+		throw new ElementNotExistException("Nguyen vong khong ton tai!!");
+	}
 
 	public NguyenVong checkNguyenVongChungTuyen(String maNganh, float diem) {
 		NguyenVong result = new NguyenVong();

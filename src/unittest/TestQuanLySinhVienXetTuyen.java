@@ -95,14 +95,7 @@ public class TestQuanLySinhVienXetTuyen {
 		danhSachThiSinh.updateThiSinh(thiSinhUpdate);
 		
 		String expectedName = "Vũ Trọng A";
-		String actualName = "";
-		
-		for (ThiSinh thiSinh : danhSachThiSinh.getDanhSachThiSinh()) {
-			if(thiSinh.getSoBaoDanh().equals(thiSinhUpdate.getSoBaoDanh())) {
-				actualName = thiSinh.getHoTen();
-				break;
-			}
-		}
+		String actualName = danhSachThiSinh.getThiSinhBySoBaoDanh(1786l).getHoTen();
 		
 		assertEquals(expectedName, actualName);
 	}
@@ -124,13 +117,7 @@ public class TestQuanLySinhVienXetTuyen {
 		
 		danhSachThiSinh.updataNguyenVongChoThiSinh(1786l, "MN2", "KD2", expected);
 		
-		NguyenVong actualNguyenVong = new NguyenVong();
-		for (ThiSinh thiSinh : danhSachThiSinh.getDanhSachThiSinh()) {
-			if(thiSinh.getSoBaoDanh().equals(1786l)) {
-				actualNguyenVong = thiSinh.getNguyenVong(expected.getMaNganh());
-				break;
-			}
-		}
+		NguyenVong actualNguyenVong = danhSachThiSinh.getThiSinhBySoBaoDanh(1786l).getNguyenVong(expected.getMaNganh(), expected.getMaTruong());
 		
 		assertEquals(expected, actualNguyenVong);	
 	}
