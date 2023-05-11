@@ -217,7 +217,11 @@ public class Test{
 				long soBaoDanhXoaNguyenVong = scan.nextLong();
 				for (ThiSinh a : danhSachThiSinh.getDanhSachThiSinh()) {
 					if (a.getSoBaoDanh().equals(soBaoDanhXoaNguyenVong)) {
-						System.out.print("Nhap ");
+						System.out.print("Nhap ma nguyen vong: ");
+						String maNguyenVong = scan.next();
+						System.out.println("Nhap ma truong: ");
+						String maTruong = scan.next();
+						a.removeNguyenVong(maNguyenVong, maTruong);
 						break;
 					}
 				}
