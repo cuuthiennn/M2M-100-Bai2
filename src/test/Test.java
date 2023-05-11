@@ -328,6 +328,6 @@ public class Test{
 		System.out.println("16.Xuat all thi sinh chung tuyen.");
 		System.out.println("17.Sap xep danh sach tuy chon theo diem giam dan.");
 		System.out.println("18.Xuat danh sach giam thi que o TP HCM.");
-		System.out.println("0.Thoat.");
+		System.out.println("0.Thoat."); 
 	}
 }

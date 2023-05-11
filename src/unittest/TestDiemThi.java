@@ -13,7 +13,7 @@ public class TestDiemThi {
 	
 	@BeforeEach
 	void initialize() {
-		DiemThi diemThi = new DiemThi(5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f);
+		this.diemThi = new DiemThi(5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f);
 	}
 	
 	@AfterEach

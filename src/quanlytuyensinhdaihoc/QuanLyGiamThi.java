@@ -12,6 +12,14 @@ public class QuanLyGiamThi {
 	public QuanLyGiamThi() {
 		this.danhSachGiamThi = new ArrayList<>();
 	}
+	
+	public QuanLyGiamThi(List<GiamThi> danhSachGiamThi) {
+		this.danhSachGiamThi = danhSachGiamThi;
+	}
+	
+	public List<GiamThi> getDanhSachGiamThi(){
+		return this.danhSachGiamThi;
+	}
 
 	public void addGiamThi(GiamThi giamThi) {
 		if (null == giamThi) {
