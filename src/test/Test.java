@@ -270,7 +270,7 @@ public class Test{
 				}
 				danhSachChungTuyen.put(maNganh, danhSachThiSinh.getThiSinhTrungTuyenByMaNganh(maNganh, diemChuan));
 				danhSachChungTuyen.get(maNganh).printDanhSachThiSinh();
-				break;
+				break;  
 			case 15:
 				System.out.print("Nhap ma nganh: ");
 				String maNganhIsPrinting = scan.next();
@@ -287,6 +287,9 @@ public class Test{
 				});
 				break;
 			case 17:
+				danhSachChungTuyen.forEach((key, value) -> {
+					value.printDanhSachThiSinh();
+				});
 				System.out.print("Nhap ma Nganh muon sap xep: ");
 				String maNganhIsSapXep = scan.next();
 				Boolean isExistMaNganhSapXep = danhSachChungTuyen.get(maNganhIsSapXep) != null ? true : false;
